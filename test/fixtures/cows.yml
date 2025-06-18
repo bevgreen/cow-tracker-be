@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ear_tag_number: MyString
+  nickname: MyString
+  birthday: 2025-06-18
+  pregnant: false
+  due_date: 2025-06-18
+  location: one
+
+two:
+  ear_tag_number: MyString
+  nickname: MyString
+  birthday: 2025-06-18
+  pregnant: false
+  due_date: 2025-06-18
+  location: two
