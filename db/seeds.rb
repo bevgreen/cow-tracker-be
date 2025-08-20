@@ -1,9 +1,23 @@
-# This file should ensure the existence of records required to run the application in every environment (production,
-# development, test). The code here should be idempotent so that it can be executed at any point in every environment.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Example:
-#
-#   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
-#     MovieGenre.find_or_create_by!(name: genre_name)
-#   end
+farm1 = Farm.create!(name: "Hamburg Hills")
+farm2 = Farm.create!(name: "Hohfeld's Farm")
+
+user1 = User.create!(name: "Beverly", farm: farm1)
+user2 = User.create!(name: "Alexis", farm: farm1)
+user3 = User.create!(name: "Sabrina", farm: farm2)
+
+loc1 = Location.create!(name: "Group 1", farm: farm1)
+loc2 = Location.create!(name: "Group 2", farm: farm1)
+loc3 = Location.create!(name: "Group 3", farm: farm1)
+loc4 = Location.create!(name: "Group 4", farm: farm1)
+
+cow1 = Cow.create!(nickname: "Jams", ear_tag_number: 100, location: loc4)
+cow2 = Cow.create!(nickname: "RH", ear_tag_number: 200, location: loc3)
+cow3 = Cow.create!(nickname: "Daisy", ear_tag_number: 300, location: loc1)
+
+list1 = List.create!(name: "Hoof Trimmer", user: user2)
+list2 = List.create!(name: "Move to Prefresh", user: user1)
+list3 = List.create!(name: "Move to OB 3", user: user3)
+
+CowList.create!(cow: cow1, list: list1)
+CowList.create!(cow: cow2, list: list1)
+CowList.create!(cow: cow3, list: list2)
