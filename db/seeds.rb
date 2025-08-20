@@ -10,13 +10,13 @@ loc2 = Location.create!(name: "Group 2", farm: farm1)
 loc3 = Location.create!(name: "Group 3", farm: farm1)
 loc4 = Location.create!(name: "Group 4", farm: farm1)
 
-cow1 = Cow.create!(name: "Jams", location: loc4)
-cow2 = Cow.create!(name: "RH", location: loc3)
-cow3 = Cow.create!(name: "Daisy", location: loc1)
+cow1 = Cow.create!(nickname: "Jams", ear_tag_number: 100, location: loc4)
+cow2 = Cow.create!(nickname: "RH", ear_tag_number: 200, location: loc3)
+cow3 = Cow.create!(nickname: "Daisy", ear_tag_number: 300, location: loc1)
 
 list1 = List.create!(name: "Hoof Trimmer", user: user2)
-list2 = List.create!(name: "Move to Prefresh", user1)
-list3 = List.create!(name: "Move to OB 3", user3)
+list2 = List.create!(name: "Move to Prefresh", user: user1)
+list3 = List.create!(name: "Move to OB 3", user: user3)
 
 CowList.create!(cow: cow1, list: list1)
 CowList.create!(cow: cow2, list: list1)
